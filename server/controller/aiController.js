@@ -118,12 +118,12 @@ export const generateImage = async (req, res) => {
     const { prompt, publish } = req.body;
     const plan = req.plan;
 
-    if (plan !== 'premium') {
-      return res.json({
-        success: false,
-        message: 'This feature is only available for premium subscriptions',
-      });
-    }
+    // if (plan !== 'premium') {
+    //   return res.json({
+    //     success: false,
+    //     message: 'This feature is only available for premium subscriptions',
+    //   });
+    // }
 
     const formData = new FormData();
     formData.append('prompt', prompt);
@@ -169,12 +169,12 @@ export const removeImageBackground = async (req, res) => {
     const { image } = req.file;
     const plan = req.plan;
 
-    if (plan !== 'premium') {
-      return res.json({
-        success: false,
-        message: 'This feature is only available for premium subscriptions',
-      });
-    }
+    // if (plan !== 'premium') {
+    //   return res.json({
+    //     success: false,
+    //     message: 'This feature is only available for premium subscriptions',
+    //   });
+    // }
     
      if (!req.file) {
       return res.json({ success: false, message: 'No image uploaded' });
@@ -211,12 +211,12 @@ export const removeImageObject = async (req, res) => {
     const { object } = req.body;
     const plan = req.plan;
 
-    if (plan !== 'premium') {
-      return res.json({
-        success: false,
-        message: 'This feature is only available for premium subscriptions',
-      });
-    }
+    // if (plan !== 'premium') {
+    //   return res.json({
+    //     success: false,
+    //     message: 'This feature is only available for premium subscriptions',
+    //   });
+    // }
 
     if (!req.file) {
       return res.json({ success: false, message: 'No image uploaded' });
@@ -253,12 +253,12 @@ export const resumeReview = async (req, res) => {
     const resume = req.file
     const plan = req.plan;
 
-    if (plan !== 'premium') {
-      return res.json({
-        success: false,
-        message: 'This feature is only available for premium subscriptions',
-      });
-    }
+    // if (plan !== 'premium') {
+    //   return res.json({
+    //     success: false,
+    //     message: 'This feature is only available for premium subscriptions',
+    //   });
+    // }
 
 
     if (resume.size() > 5 * 1024 * 1024) {
